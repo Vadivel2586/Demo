@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$USER_HOME$/Downloads/redpanda-kafka/redpanda-kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../../Project/Spring_boot/spring-boot-keycloak-main/pom.xml" />
       </list>
     </option>
   </component>

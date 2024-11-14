@@ -1,6 +1,7 @@
 package org.example.sample;
 
 
+import java.lang.reflect.Parameter;
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -46,8 +47,16 @@ public class Sample1 {
 
         List<String> input2 = Arrays.asList("1","3","7abc","4","2","xyz8", "5");
 
-        List<Integer> intList = input2.stream().filter(val-> Pattern.matches("^[0-9]$",val))
-                .map(val->Integer.parseInt(val)).collect(Collectors.toList());
+        System.out.println(input2.stream().map(num-> num.replaceAll("[^0-9]","")).filter(num->!num.isEmpty()).collect(Collectors.toList()));
+
+
+        System.out.println(input2.stream().filter(num-> Pattern.matches("^[0-9]$",num)).collect(Collectors.toList()));
+
+        List<Integer> intList = input2.stream().filter(val -> Pattern.matches("^[0-9]$",val)).map(val->Integer.parseInt(val)).collect(Collectors.toList());
+        System.out.println(intList);
+
+        Optional<Integer> secondHighestNum =  intList.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst();
+        System.out.println(secondHighestNum);
 
     }
 }

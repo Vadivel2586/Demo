@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="glassfish.jaxb.jxc" type="repository">
+    <properties maven-id="org.glassfish.jaxb:jaxb-jxc:2.3.1" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jaxb-jxc-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxb-xjc-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xsom-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/codemodel-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/rngom-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dtd-parser-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/istack-commons-tools-3.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ant-1.10.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ant-launcher-1.10.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/relaxng-datatype-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxb-runtime-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxb-api-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/stax-ex-1.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/FastInfoset-1.2.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.activation-api-1.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/istack-commons-runtime-3.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/txw2-2.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

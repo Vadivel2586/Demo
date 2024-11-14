@@ -1,19 +1,20 @@
 package org.example.sample;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StringToCharArray {
     public static void main(String[] args) {
-        String str = "Vadivel";
+        String str = "Vadivel vadi";
 
         List charArray = str.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.toList());
+
+        System.out.println(str.chars().mapToObj(c->(char)c).collect(Collectors.toList())
+                        .stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
+                        .entrySet().stream().filter(e->e.getValue()>1).map(e->e.getKey()).collect(Collectors.toList()));
 
         System.out.println(str.chars().mapToObj(c->(char)c).collect(Collectors.toList()));
 
@@ -23,6 +24,13 @@ public class StringToCharArray {
         List<Integer> numList = List.of(2,2,5,4,3,5,6,67,5,4,34,3,2,2);
         Map<Integer,Long> dupCount = numList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
         System.out.println(dupCount);
+
+
+        List<Integer> nubList = List.of(1,2,3,2,1,2,3,4,4,4);
+        Map<Integer,Long> dupCount1 = nubList.stream().collect(Collectors.groupingBy(a->a,Collectors.counting()));
+        System.out.println(dupCount1);
+
+        System.out.println(nubList.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst());
 
 
         System.out.println(numList.stream().sorted().distinct().collect(Collectors.toList()));
@@ -77,6 +85,12 @@ public class StringToCharArray {
         }
 
 
+        int[] numbers = {10, 22, 14, 26, 30, 15};
+        int target = 20;
+
+        int nearestNumber = findNearestNumber(numbers, target);
+
+        System.out.println("The nearest number to " + target + " is: " + nearestNumber);
     }
     public static void checkPrimeNumber(int numToCheck){
         int n= numToCheck/2;
@@ -95,5 +109,22 @@ public class StringToCharArray {
         if(flag == 0){
             System.out.println(numToCheck +" is a prime number.");
         }
+    }
+
+    public static int findNearestNumber(int[] numbers, int target) {
+        // Initialize nearest number with the first element of the array
+        int nearest = numbers[0];
+        int minDiff = Math.abs(target - nearest);
+        System.out.println("minDiff: "+minDiff);
+
+        for (int num : numbers) {
+            int diff = Math.abs(target - num);
+            if (diff < minDiff) {
+                minDiff = diff;
+                nearest = num;
+            }
+        }
+
+        return nearest;
     }
 }

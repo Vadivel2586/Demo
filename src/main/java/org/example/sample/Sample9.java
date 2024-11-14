@@ -1,6 +1,8 @@
 package org.example.sample;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Sample9 {
     public static void main(String[] args) {
@@ -15,5 +17,15 @@ public class Sample9 {
 
         Integer maxKey = map.entrySet().stream().max(Map.Entry.comparingByKey()).get().getKey();
         System.out.println(maxKey);
+    }
+
+    public static class Sample12 {
+        public static void main(String[] args) {
+            //Write a program to find duplicate in a string array String : "Sunday", "Monday", "Tuesday", "Wednesday", "Sunday", "Monday"
+            List<String> inputList = List.of("Sunday", "Monday", "Tuesday", "Wednesday", "Sunday", "Monday");
+            List<String> dupList =  inputList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
+                    .entrySet().stream().filter(entry -> entry.getValue() >1).map(entry -> entry.getKey()).collect(Collectors.toList());
+            System.out.println(dupList);
+        }
     }
 }

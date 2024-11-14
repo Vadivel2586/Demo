@@ -1,7 +1,9 @@
 package org.example.sample;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class AllInOne {
     public static void main(String[] args) {
@@ -33,6 +35,14 @@ public class AllInOne {
         }else{
             System.out.println(inputNum+" is not Prime Number. ");
         }
+
+
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        Optional<String> anyName = names.stream().findAny();
+        anyName.ifPresent(System.out::println); // Outputs: Charlie (or might be empty if no match)
+        Optional<String> firstName = names.stream().findFirst();
+        firstName.ifPresent(System.out::println); // Outputs: Charlie (or might be empty if no match)
+
 
 
     }
