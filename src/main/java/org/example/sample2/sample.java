@@ -16,6 +16,9 @@ public class sample {
 
         System.out.println(empList.stream().map(emp->emp.getSalary()).sorted(Comparator.reverseOrder()).skip(1).findFirst().get());
 
+
+        System.out.println(empList.stream().sorted(Comparator.comparingDouble(Employee::getSalary)).skip(1).findFirst().get());
+
         List<Double>  salary = empList.stream().map(emp-> emp.getSalary()).collect(Collectors.toList());
         OptionalDouble avgData = salary.stream().mapToDouble(sal->(double) sal).average();
         System.out.println("Avg Salary: "+ avgData.getAsDouble());

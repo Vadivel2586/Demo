@@ -9,6 +9,7 @@ public class Sample {
 
     record Employee(int id, String name, String manager){}
     public static void main(String[] args) {
+        //From the employee Object group by manager.
         List<Employee> employees = Arrays.asList(
                 new Employee(1, "Alice", "Bob"),
                 new Employee(2, "Charlie", "Bob"),

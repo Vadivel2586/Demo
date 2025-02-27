@@ -14,7 +14,7 @@ public class Sample {
         IntStream.range(0,checkIn.length).forEach(i->{
             LocalDate checkInDate = LocalDate.of(2024, 10, checkIn[i]);
             LocalDate checkOutDate = LocalDate.of(2024, 10,checkOut[i]).minusDays(1);
-            System.out.println(checkInDate +" "+checkOutDate);
+            System.out.println("Checked In Date: "+checkInDate +" and Checked Out Date:"+checkOutDate);
         });
 
         System.out.println("=========================");
@@ -34,8 +34,8 @@ public class Sample {
         }
 
         /*for(String detail: checkInOutDetails)
-            System.out.println(detail);
-*/
+            System.out.println(detail);*/
+
         List<String> checkInOutDetails1 = new ArrayList<>();
 
         IntStream.range(0, checkIn.length).forEach(i -> {
@@ -44,11 +44,11 @@ public class Sample {
             checkInOutDetails1.add("Checked In Date: " + checkInDate + " and Checked Out Date: " + checkOutDate);
         });
 
-        //checkInOutDetails.forEach(System.out::println);
+//        checkInOutDetails.forEach(System.out::println);
 
-        IntStream.range(0, checkIn.length).forEach( i-> {
-            System.out.println(checkIn[i]);
-        });
+//        IntStream.range(0, checkIn.length).forEach( i-> {
+//            System.out.println(checkIn[i]);
+//        });
 
 
 

@@ -23,6 +23,9 @@ public class sample {
         Map<String, Long> map = empList.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
         System.out.println(map);
 
+        System.out.println(empList.stream().collect(Collectors.groupingBy(Employee::getDepartment)));
+
+
         //palindrome check
         String givenString = "velev";
         String reverseString = new StringBuilder(givenString).reverse().toString();
